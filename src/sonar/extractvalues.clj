@@ -26,6 +26,7 @@
 (defn getAttrValue
   "Retrieves the Attribute value of a specific element name"
   [element name]
+  (prn element name)
   (html/select-nodes* url [(html/attr= element name) html/any-node]))
 
 (defn getAttrValueMap
@@ -60,3 +61,22 @@
   (html/select-nodes* url [(html/attr= element) html/any-node]))
 
 (getAttrValue "m_public_undocumented_api")
+(getAttrValueMap (into {} undocumented_api))
+(map_attributes (apply (keys undocumented_api)))
+ (apply map_attributes (keys undocumented_api))
+(keys undocumented_api)
+(map_attributes "m_sqale_index")
+(getAttrValue (into {}  undocumented_api))
+(keys (into {}  undocumented_api))
+(vals (into {}  undocumented_api))
+(getAttrValue  (apply keyword (vals (into {}  undocumented_api))) (apply str (keys (into {}  undocumented_api))))
+
+(html/select-nodes* url [(html/attr= element name) html/any-node])
+(keywords (keys (into {}  undocumented_api)))
+
+(defn printvalues [mapvalues]
+  (doseq [innermap (into () mapvalues)]
+    (let [mapper (into () innermap)]
+      (prn (getAttrValue (nth mapper 0) (apply str (nth mapper 1)))))))
+
+(printvalues map_attributes)
