@@ -1,6 +1,6 @@
 # sonar
 
-FIXME: description
+FIXME: DEPRECATED
 
 ## Installation
 
